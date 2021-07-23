@@ -1,53 +1,67 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Dosis&family=Luckiest+Guy&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <h1>Welcome to the Rock, Paper, Scissors, game!</h1>
-    </header>
-    <main>
-        <div class="container">
-            <section id="intro">
-                <p>Think you can beat the computer in a thrilling game of Rock, Paper Scissors? Try you luck and see! First to win 3 rounds wins!</p>
-            </section>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <title>Rock, Paper, Scissors!</title>
+    </head>
+    <body>
+        <header class="ribbon" id="ribbon"><p id="header-text"></p></header>
 
-            <section id="game">
-                <div class="score">
-                    <h2 id="round"></h2>
-                    <p id="player-score"></p>
-                    <p id="computer-score"></p>
-                </div> <!-- /score -->
+        <main class="container">
+            <div class="start-game" id="start-screen">
+                   <p class="intro-text">Think you can beat the computer in a thrilling game of <strong>Rock, Paper, Scissors</strong>? Try you luck and see! 
+                    <br/>   
+                    First to win 3 rounds wins!</p> 
+                   <p class="btn" id="start-game">start game</p> 
+            </div><!-- close start-game-->
+
+            <div class="game-screen hidden" id="game-screen">
+                <p class="round-display">Round <span id="round-number"></span></p>
+                <div class="button-container">
+                    <img src="images/Rock.svg" aria-label="rock button" class="game-btn" id="rock-button"/>
+                    <img src="images/Paper.svg" aria-label="paper button" class="game-btn" id="paper-button"/>
+                    <img src="images/Scissors.svg" aria-label="scissors button" class="game-btn" id="scissors-button"/>
+                </div><!-- closes button-container-->
+            </div><!-- closes game-screen-->
 
 
-                <div class="choices-radio">
-                    <input type="radio" id="radioRock" name="radioChoices" value="rock">
-                    <label for="radioRock">⛰ <br>rock</label>
-                    <input type="radio" id="radioPaper" name="radioChoices" value="paper">
-                    <label for="radioPaper">📃 <br>paper</label>
-                    <input type="radio" id="radioScissors" name="radioChoices" value="scissors"><label for="radioScissors">✂<br>scissors</label>
-                </div><!-- /choices-radio -->
-            
-                <div class="results hidden">
-                    <p class="player-choice"></p>
-                    <p class="computer-choice"></p>
-                    <p class="winner"></p>
-                </div><!-- /results-->
-                <div class="new-round hidden">
-                    <button id="rematch">Click for a Rematch!</button>
-                </div><!-- /play-again-->
-                <div class="play-again hidden">
-                    <button id="again">Click to Play Again!</button>
-                </div><!-- /play-again-->
-            </section> <!-- /game-->
+            <div class="results-page hidden" id="results-page">
+                <div class="choices">
+                    <div class="player-choice">
+                        <p>You Chose:</p>
+                        <span id="player-icon"></span>
+                    </div>
+                    <div class="cpu-choice">
+                        <p>CPU Chose:</p>
+                        <span id="cpu-icon"></span>
+                    </div>
 
-        </div> <!-- /container-->
-    </main>
-    <script src="index.js"></script>
-</body>
+                </div><!--closes choices-->
+                <div class="scoreboard">
+                    <p class="winner" id="winner"></p>
+
+                    <div class="points">
+                        <div class="player-points">
+                            <p>You: </p>
+                            <span id="player-score"></span>
+                        </div>
+                        <div class="cpu-points">
+                            <p>CPU:</p>
+                            <span id="cpu-score"></span>
+                        </div>
+                        
+                    </div>
+                </div><!-- closes scoreboard-->
+                <p class="btn" id="play-again">play again</p>
+            </div><!-- closes results-page-->
+
+        </main>
+
+        <script src="script/index.js"></script>
+    </body>
 </html>
